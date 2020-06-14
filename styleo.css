@@ -1,0 +1,26 @@
+#headline {
+	line-height: normal;
+}
+
+#note {
+	line-height: normal;
+    font-size: 0.9em;	
+}
+
+#table {
+	margin: 0 auto;
+}
+
+#status {
+	height: 20px;
+	text-align: center;
+}
+
+#button {
+	text-align: center;
+}
+
+#save {
+	padding: 5px 20px;
+	text-align: center;
+}

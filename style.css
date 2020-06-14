@@ -1,0 +1,136 @@
+body {
+	font-size: 12px;
+	min-width: 200px;
+	min-height: 120px;
+}
+
+#copy {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+}
+
+#content {
+
+}
+
+#headline {
+	margin: 0px;
+}
+
+#details {
+	margin: 5px 0px;
+}
+
+#location {
+
+}
+
+#data {
+	padding: 2px;
+	border-top: 1px solid lightblue;
+	border-bottom: 1px solid lightblue;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+#impressum {
+    position: fixed;
+	padding: 5px;
+    bottom: 0;
+    right: 0;
+    font-size: 8px;
+	color: darkgray;
+}
+
+#loadercontainer {
+	padding-top: 20%;
+}
+
+#loader {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+	margin: auto;
+}
+
+#clipboard {
+	float: right;
+}
+
+#clipboard button {
+	font-size: 0.8em;
+	color: lightblue;
+	border: 1px solid lightblue;
+	border-radius: 5px;
+}
+
+#clipboard button:active {
+	background: #efefef;
+}
+
+#selector {
+	margin-left: 5px;
+}
+
+button {
+	background: #ffffff;
+	border-style: none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+button:active, button:focus {
+	outline: none;
+}
+
+.activated {
+	background: lightblue;
+    outline: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.renderjson a { 
+	text-decoration: none; 
+}
+.renderjson .disclosure { 
+	color: lightblue;
+}
+.renderjson .syntax { 
+	color: black; 
+}
+.renderjson .string { 
+	color: SteelBlue; 
+}
+.renderjson .number { 
+	color: LimeGreen; 
+}
+.renderjson .boolean { 
+	color: DeepPink; 
+	font-weight: bold;
+}
+.renderjson .key { 
+	color: black; 
+}
+.renderjson .keyword { 
+	color: MediumPurple; 
+	font-weight: bold;
+	font-style: italic;
+}
+.renderjson .object.syntax { 
+	color: black; 
+}
+.renderjson .array.syntax { 
+	color: Orange; 
+	font-weight: bold;
+}
