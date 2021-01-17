@@ -1,11 +1,15 @@
 window.onload = getAndDisplayDataLayer();
 
 function getAndDisplayDataLayer() {	
+	document.querySelector("#close").addEventListener("click", function() {
+        window.close();
+    });
 	chrome.tabs.getSelected(null, function(tab) {
 		// Send a request to the content script.
 		//try{
 			var getData = chrome.tabs.sendRequest(tab.id, {action: "getData"}, function(response) {
 				if(response) {
+					var version = "version 1.5";
 					if(response.data.length > 0) {
 						var index = 0;
 						var div = document.getElementById("loadercontainer");
@@ -17,7 +21,7 @@ function getAndDisplayDataLayer() {
 							<div id="selector"></div>\
 							<div id="clipboard"><button id="copytoclipboard">Copy to Clipboard</button></div>\
 							<div id="data"></div>\
-							<div id="impressum">by Philipp Jäckle</div>';
+							<div id="version">'+version+'</div>';
 						
 						var dataContainer = document.getElementById("data");
 						dataContainer.appendChild(
@@ -75,7 +79,7 @@ function getAndDisplayDataLayer() {
 							'<h2 id="headline">Sorry</h2>\
 							<p><i id="location">'+response.url+'</i></p>\
 							<div id="data">None of the declared data layer names were found.</br>You can declare custom data layer names in the options area.</div>\
-							<div id="impressum">by Philipp Jäckle</div>';
+							<div id="version">'+version+'</div>';
 					}
 				}
 			});

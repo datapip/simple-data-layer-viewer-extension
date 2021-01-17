@@ -14,6 +14,27 @@ body {
 
 }
 
+#close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#feedback {
+    position: absolute;
+    top: 1px;
+    right: 25px;
+}
+
+#feedback a {
+    font-size: 17px;
+    text-decoration: none;
+    color: #ccc;
+}
+
 #headline {
 	margin: 0px;
 }
@@ -34,7 +55,7 @@ body {
 	margin-bottom: 20px;
 }
 
-#impressum {
+#version {
     position: fixed;
 	padding: 5px;
     bottom: 0;
