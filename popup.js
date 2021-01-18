@@ -17,7 +17,7 @@ function getAndDisplayDataLayer() {
 						var now = new Date();
 						document.getElementById("content").innerHTML = 
 							'<h2 id="headline">'+response.data[0][0]+'</h2>\
-							<p id="details"><i id="time">'+now.toLocaleString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })+'</i><br><i id="location">'+response.url+'</i></p>\
+							<p id="details"><i id="location"><b>on </b>'+response.url+'</i><br><i id="time"><b>at </b>'+now.toLocaleString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })+'</i></p>\
 							<div id="selector"></div>\
 							<div id="clipboard"><button id="copytoclipboard">Copy to Clipboard</button></div>\
 							<div id="data"></div>\
@@ -77,7 +77,6 @@ function getAndDisplayDataLayer() {
 						
 						document.getElementById("content").innerHTML = 
 							'<h2 id="headline">Sorry</h2>\
-							<p><i id="location">'+response.url+'</i></p>\
 							<div id="data">None of the declared data layer names were found.</br>You can declare custom data layer names in the options area.</div>\
 							<div id="version">'+version+'</div>';
 					}
