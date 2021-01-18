@@ -4,7 +4,7 @@ html {
 body {
 	font-size: 12px;
 	min-width: 200px;
-	min-height: 120px;
+	min-height: 130px;
 }
 
 #copy {
@@ -80,15 +80,16 @@ body {
 	margin: auto;
 }
 
-#clipboard {
+#buttons {
 	float: right;
 }
 
-#clipboard button {
-	margin: 0;
-	background: none;
+#buttons div {
+	display: inline-block;
+	margin-left: 10px;
 	font-size: 0.8em;
 	color: #2196F3;
+	cursor: pointer;
 }
 
 #selector {
