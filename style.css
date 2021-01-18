@@ -43,7 +43,7 @@ body {
 }
 
 #details {
-	margin: 5px 0px;
+	margin: 5px 0px 15px;
 }
 
 #location {
@@ -85,15 +85,10 @@ body {
 }
 
 #clipboard button {
+	margin: 0;
 	background: none;
 	font-size: 0.8em;
 	color: #2196F3;
-	border: 1px solid #2196F3;
-}
-
-#clipboard button:active {
-	background: #2196F3;
-	color: #ffffff;
 }
 
 #selector {

@@ -9,7 +9,7 @@ function getAndDisplayDataLayer() {
 		//try{
 			var getData = chrome.tabs.sendRequest(tab.id, {action: "getData"}, function(response) {
 				if(response) {
-					var version = "version 1.5";
+					var version = "Version 1.5";
 					if(response.data.length > 0) {
 						var index = 0;
 						var div = document.getElementById("loadercontainer");
