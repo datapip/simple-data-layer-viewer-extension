@@ -1,7 +1,7 @@
 {
 "name": "Simple Data Layer Viewer",
 "short_name": "DL Viewer",
-"version": "1.4",
+"version": "1.5",
 "description": "Simple Plugin for displaying the Data Layer Object of a Webpage.",
 "manifest_version": 2,
 "content_scripts": [{

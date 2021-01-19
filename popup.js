@@ -19,13 +19,14 @@ function getAndDisplayDataLayer() {
 							'<h2 id="headline">'+response.data[0][0]+'</h2>\
 							<p id="details"><i id="location"><b>on </b>'+response.url+'</i><br><i id="time"><b>at </b>'+now.toLocaleString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })+'</i></p>\
 							<div id="selector"></div>\
-							<div id="buttons"><div id="collapseall">Collapse all</div><div id="expandall" style="display: none">Expand all</div><div id="copytoclipboard">Copy to clipboard</div></div>\
+							<div id="actions"><div id="collapseall">Collapse all</div><div id="expandall" style="display: none">Expand all</div><div id="copytoclipboard">Copy to clipboard</div></div>\
 							<div id="data"></div>\
 							<div id="version">'+version+'</div>';
 						
 						var dataContainer = document.getElementById("data");
 						dataContainer.appendChild(
 							renderjson//.set_icons('+', '-')
+							//.set_max_string_length(100)
 							.set_show_to_level("all")(JSON.parse(response.data[0][1]))
 						);
 
