@@ -1,31 +1,50 @@
+// keys for saved data layer names
+var keys =	[
+	"customDataLayer1", 
+	"customDataLayer2", 
+	"customDataLayer3", 
+	"customDataLayer4", 
+	"customDataLayer5", 
+	"customDataLayer6", 
+	"customDataLayer7", 
+	"customDataLayer8"
+];
+
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.action == "getData"){
 		
+		// listen for custom event from injected code
 		document.addEventListener('sendDataLayerInformation', function(e) {
 			if (e.detail != undefined){
 				sendResponse(e.detail);
 			}
 		});
 		
+		// get saved data layer names to search for
 		chrome.storage.sync.get(["customDataLayer1", "customDataLayer2", "customDataLayer3", "customDataLayer4", "customDataLayer5", "customDataLayer6", "customDataLayer7", "customDataLayer8"], function(items) {
-
-			var keys = [];
 			
-			(items.customDataLayer1!="" && items.customDataLayer1!=" " && items.customDataLayer1!=undefined) && (keys.push(items.customDataLayer1));
-			(items.customDataLayer2!="" && items.customDataLayer2!=" " && items.customDataLayer2!=undefined) && (keys.push(items.customDataLayer2));
-			(items.customDataLayer3!="" && items.customDataLayer3!=" " && items.customDataLayer3!=undefined) && (keys.push(items.customDataLayer3));
-			(items.customDataLayer4!="" && items.customDataLayer4!=" " && items.customDataLayer4!=undefined) && (keys.push(items.customDataLayer4));
-			(items.customDataLayer5!="" && items.customDataLayer5!=" " && items.customDataLayer5!=undefined) && (keys.push(items.customDataLayer5));
-			(items.customDataLayer6!="" && items.customDataLayer6!=" " && items.customDataLayer6!=undefined) && (keys.push(items.customDataLayer6));
-			(items.customDataLayer7!="" && items.customDataLayer7!=" " && items.customDataLayer7!=undefined) && (keys.push(items.customDataLayer7));
-			(items.customDataLayer8!="" && items.customDataLayer8!=" " && items.customDataLayer8!=undefined) && (keys.push(items.customDataLayer8));
+			// get a list of non empty values
+			var values = [];
+			for(var i = 1; i <= Object.keys(items).length; i++) {
+				var currentValue = items["customDataLayer"+i];
+				(currentValue.length>0) && (values.push(items["customDataLayer"+i]))
+			}
 
-			if(keys.length==0) {
-				keys = ["dataLayer", "digitalData", "tc_vars", "utag.data", "udo"];
+			// return no data if no data layer name is declared
+			if(values.length===0) {
+				var injectionCode = `
+					document.dispatchEvent(new CustomEvent('sendDataLayerInformation', {
+						detail: {
+							url: document.location.href,
+							data: []
+						}
+					}));
+				`
 			}
 			
-			injectionCode = `setTimeout(function(){
-				var keyList = ['`+keys.join("','")+`'];
+			// create injection code to search for provided data layer names
+			var injectionCode = `setTimeout(function(){
+				var keyList = ['`+values.join("','")+`'];
 				var resultList = [];	
 				for(var i=0; i<keyList.length; i++) {
 					if(keyList[i].indexOf(".")!==-1) {
@@ -54,7 +73,8 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				document.getElementById('simpleDataLayerScript').remove();
 			}, 0);
 			`;
-				
+			
+			// append script to current page
 			var script = document.createElement('script');
 			script.id = 'simpleDataLayerScript';
 			script.textContent = injectionCode;

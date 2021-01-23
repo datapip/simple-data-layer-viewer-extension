@@ -5,20 +5,60 @@
 	<link rel="stylesheet" type="text/css" href="styleo.css">
 </head>
 <body>
-	<div id="content">
-		<h3 id="headline">Please insert below the names of the Data Layer Objects you want to display.</h3>
-		<p id="note"><b>Note:</b> you might reference to nested objects such as 'utag.data' but please do not reference to arrays.</p>
+	<header>
+		<div>Simple Data Layer Viewer</div>
+		<span id="close">&#10006;</span>
+	</header>	
+	<main>
+		<div id="description">
+			<p>Please insert below the names of the Data Layer Objects you want to display.</p>
+			<p><b>Note:</b> you might reference to nested objects such as 'utag.data' but please do not reference to arrays.</p>
+		</div>
 		</br>
 		<div id="table">
+			<table>
+				<tr>
+				  <td>1</td>
+				  <td><input type="text" id="dataLayer1"></td>
+				</tr>
+				<tr>
+				  <td>2</td>
+				  <td><input type="text" id="dataLayer2"></td>
+				</tr>
+				<tr>
+				  <td>3</td>
+				  <td><input type="text" id="dataLayer3"></td>
+				</tr>
+				<tr>
+				  <td>4</td>
+				  <td><input type="text" id="dataLayer4"></td>
+				</tr>
+				<tr>
+				  <td>5</td>
+				  <td><input type="text" id="dataLayer5"></td>
+				</tr>
+				<tr>
+				  <td>6</td>
+				  <td><input type="text" id="dataLayer6"></td>
+				</tr>
+				<tr>
+				  <td>7</td>
+				  <td><input type="text" id="dataLayer7"></td>
+				</tr>
+				<tr>
+				  <td>8</td>
+				  <td><input type="text" id="dataLayer8"></td>
+				</tr>
+			</table>
 		</div>
 		</br>
 		<div id="status">
 			<br>
 		</div>
 		<div id="button">
-			<button id="save">Save</button>
+			<button id="save">Save Names</button>
 		</div>
 		<script src="options.js"></script>
-	</div>
+	</main>
 </body>
 </html>
