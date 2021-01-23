@@ -38,7 +38,7 @@ function initate_check() {
 			// set content for nor result
 			if(!response || !response.data.length > 0) {
 				var noResult = '<div id="data"><br>Sorry, none of the declared data layer names were found.<br><br>\
-					You can declare custom data layer names in the options area.</div>\
+					You can declare custom data layer names in the options area.</div><br>\
 					<div id="version">'+version+'</div>';
 				displayContent(noResult);
 				return;
