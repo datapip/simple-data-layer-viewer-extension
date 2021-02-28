@@ -110,37 +110,41 @@ button:active, button:focus {
   100% { transform: rotate(360deg); }
 }
 
+.renderjson {
+	font-size: 13px;
+}
 .renderjson a { 
 	text-decoration: none; 
 }
 .renderjson .disclosure { 
-	color: lightblue;
+	color: #d5d5d5;
 }
 .renderjson .syntax { 
-	color: black; 
+	color: #a1a1a1; 
 }
 .renderjson .string { 
-	color: SteelBlue; 
+	color: #007700; 
 }
 .renderjson .number { 
-	color: LimeGreen; 
+	color: #0000FF; 
+	font-weight: bold;
 }
 .renderjson .boolean { 
-	color: DeepPink; 
+	color: #cc00ad; 
 	font-weight: bold;
 }
 .renderjson .key { 
-	color: black; 
+	color: #909090; 
 }
 .renderjson .keyword { 
-	color: MediumPurple; 
+	color: #cc0000; 
 	font-weight: bold;
 	font-style: italic;
 }
 .renderjson .object.syntax { 
-	color: black; 
+	color: #000000; 
 }
 .renderjson .array.syntax { 
-	color: Orange; 
+	color: #ff8000; 
 	font-weight: bold;
 }

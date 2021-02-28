@@ -41,7 +41,7 @@ let global = {};
 
 		global.container = document.querySelector("#data");
 		global.container.appendChild(
-			renderjson//.set_icons('[+]', '[-]')
+			renderjson.set_icons('[+]', '[-]')
 			//.set_max_string_length(100)
 			.set_show_to_level("all")(JSON.parse(global.data[global.index][1]))
 		);
