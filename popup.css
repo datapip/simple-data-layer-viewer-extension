@@ -47,7 +47,6 @@ header {
 }
 
 #data {
-	padding: 5px;
 	border-top: 1px solid var(--accent);
 }
 
@@ -76,8 +75,8 @@ header {
 }
 
 #actions {
-	margin-right: 5px;
-	float: right;
+	position: absolute;
+    right: 5px;
 }
 
 #actions div {
@@ -112,39 +111,44 @@ button:active, button:focus {
 
 .renderjson {
 	font-size: 13px;
+    overflow-x: auto;
+    margin: 0;
+	padding: 10px;
 }
 .renderjson a { 
 	text-decoration: none; 
 }
 .renderjson .disclosure { 
-	color: #d5d5d5;
+	color: #00477f;
 }
 .renderjson .syntax { 
-	color: #a1a1a1; 
+	color: #aaaaaa; 
 }
 .renderjson .string { 
-	color: #007700; 
+	color: #007700;
+	font-weight: 600; 
 }
 .renderjson .number { 
 	color: #0000FF; 
-	font-weight: bold;
+	font-weight: 600;
 }
 .renderjson .boolean { 
 	color: #cc00ad; 
-	font-weight: bold;
+	font-weight: 600;
 }
 .renderjson .key { 
-	color: #909090; 
+	color: #505050; 
 }
 .renderjson .keyword { 
 	color: #cc0000; 
-	font-weight: bold;
+	font-weight: 600;
 	font-style: italic;
 }
 .renderjson .object.syntax { 
-	color: #000000; 
+	color: #000000;
+	font-weight: 600; 
 }
 .renderjson .array.syntax { 
 	color: #ff8000; 
-	font-weight: bold;
+	font-weight: 600;
 }
