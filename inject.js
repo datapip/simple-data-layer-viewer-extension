@@ -1,8 +1,8 @@
 document.addEventListener('sendDataLayerNames', function(e) {
 
-    const names = e.detail.names
+    const names = e.detail.names;
 
-    let result = {
+    let results = {
         url: document.location.href,
         data: []
     };
@@ -10,15 +10,15 @@ document.addEventListener('sendDataLayerNames', function(e) {
     if (names.length != 0) {
         names.forEach((name) => {
             if(window[name] !== undefined) {
-                result.data.push([
+                results.data.push([
                     name,
                     JSON.stringify(window[name])
                 ]);
             }
         });
     } else {
-        result.error = "There are no data layer names defined. You can add names under options.";
+        results.error = "There are no data layer names defined. You can add names under options.";
     }
     
-    document.dispatchEvent(new CustomEvent('sendDataLayerInformation', {detail: result}))
+    document.dispatchEvent(new CustomEvent('sendDataLayerInformation', {detail: results}))
 });

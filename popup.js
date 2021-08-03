@@ -14,10 +14,12 @@ let global = {};
 	chrome.storage.sync.get(keys, (values) => {
 
 		const names = Object.values(values).filter( (value) => {if(value) return value} );
-		const code = `document.dispatchEvent(new CustomEvent('sendDataLayerNames', { "detail": { "names": ["${names.join('","')}"] } } ))`;
-		
-		chrome.tabs.executeScript({
-			code: code		
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			var activeTab = tabs[0];
+			chrome.tabs.sendMessage(activeTab.id, { 
+				"message": "dataLayerNames",
+				"names": names 
+			});
 		});
 
 	})
@@ -181,7 +183,7 @@ function handleSyntax() {
 	if(this.id==="collapseall") {
 		expandButton.style.display = "inline-block";
 		collapseButton.style.display = "none";
-		level = "1";
+		level = "0";
 	}
 	global.container.innerHTML = "";
 	global.container.appendChild(
